@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send WhatsApp Message</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #25D366; /* WhatsApp green */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #128C7E; /* Darker green on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Send a WhatsApp Message</h1>
+    <button onclick="sendMessage()">Send Message</button>
+</div>
+
+<script>
+    function sendMessage() {
+        const phoneNumber = '919606060168'; // Replace with your WhatsApp number
+        const message = 'Need water can at U stay Live in, #47, 4th floor, 503, behind M2 Zion Mens Salon. maps.app.goo.gl/Jym98TY82sWmbKYc6'; // Your message
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappURL, '_blank');
+    }
+</script>
+
+</body>
+</html>
