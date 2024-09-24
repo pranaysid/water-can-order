@@ -9,6 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
             background-color: #f0f0f0;
             font-family: Arial, sans-serif;
@@ -29,13 +30,19 @@
         button:hover {
             background-color: #128C7E; /* Darker green on hover */
         }
+        #qrcode {
+            margin-top: 20px;
+        }
     </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
 </head>
 <body>
 
 <div class="container">
-    <h1>Click to order Water Can</h1>
+    <h1>Click to Order Water Can</h1>
     <button onclick="sendMessage()">Send Message</button>
+    <div id="qrcode"></div>
 </div>
 
 <script>
@@ -45,6 +52,11 @@
         const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
         window.open(whatsappURL, '_blank');
     }
+
+    $(document).ready(function() {
+        const qrUrl = 'https://pranaysid.github.io/water-can-order/';
+        $('#qrcode').qrcode(qrUrl);
+    });
 </script>
 
 </body>
