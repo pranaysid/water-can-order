@@ -27,9 +27,18 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto; /* Center the button horizontally */
         }
         button:hover {
             background-color: #128C7E; /* Darker green on hover */
+        }
+        button img {
+            margin-right: 10px; /* Space between logo and text */
+            width: 20px;
+            height: 20px;
         }
         #qrcode {
             margin-top: 20px;
@@ -42,7 +51,9 @@
 
 <div class="container">
     <h1>Click to Order Water Can</h1>
-    <button onclick="sendMessage()">Send Message</button>
+    <button onclick="sendMessage()">
+        <img src="whatsapp-logo.png" alt="WhatsApp Logo">Send Message
+    </button>
     <div id="qrcode"></div>
 </div>
 
